@@ -1,0 +1,93 @@
+
+" Общие настройки
+
+scriptencoding utf-8
+
+" Общие настройки
+
+set nocompatible
+set nobackup
+set ic						" При поиске - игнорировать регистр
+set nu						" Нумерация строк
+set hidden					" Не выгружать буфер при переходе на другой файл
+set termencoding=utf-8		" Умолчательная кодировка
+set incsearch				" do incremental searching
+set history=50				" keep 50 lines of command line history
+set ruler					" show the cursor position all the time
+set showcmd					" display incomplete commands
+set novisualbell
+set cmdheight=2
+set tabpagemax=50
+set shortmess+=I			" Отключаем детей Уганды
+
+" Ширина таба
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Автозамены
+iabbrev ### ############################################################################
+
+" Копирование/вставка в/из буфер обмена X
+map <C-c> "+y
+map <C-v> "*P
+imap <C-v> <C-R><C-O>*
+
+" statusline
+set laststatus=2
+set statusline=%<%f\ -\ Буффер:\ %2n[%M%R%W]\ \|\ Строка\ -\ %5l[%3p%%]\ Колонка\ -\ %2c\ \|\ %{Tlist_Get_Tagname_By_Line()}
+
+" Быстрое сохранение сессии
+map <F6> :mks!<CR>
+
+" Открыть дерево тегов по <F7>
+nnoremap <silent> <F7> :TlistToggle<CR>
+let Tlist_Auto_Open=0
+let Tlist_Auto_Update=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_Right_Window=1
+
+" Цвета
+colorscheme jellybeans
+"colorscheme molokai
+"colorscheme desert
+"colorscheme koehler
+"colorscheme torte
+
+" Поддержка мыши
+set mouse=a
+set mousemodel=popup
+
+" Подсветка синтаксиса
+syntax enable
+set hlsearch
+
+" Проверка орфографии
+map <F1> :setlocal spell! spelllang=ru,en<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Отступы
+
+filetype plugin indent on
+set autoindent
+
+au BufNewFile,BufRead *.asm setlocal syntax=nasm
+au BufNewFile,BufRead *.php setlocal syntax=php
+
+set backspace=indent,eol,start
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Фолдинг
+
+set foldenable
+set foldmethod=syntax
+set foldtext=v
+set foldcolumn=1
+
+au BufNewFile,BufRead *.py setlocal foldmethod=indent
+au BufNewFile,BufRead *.asm setlocal foldmethod=indent
+au BufNewFile,BufRead *.sh setlocal foldmethod=indent
+au BufNewFile,BufRead *.m setlocal foldmethod=indent
+au BufNewFile,BufRead *.pas setlocal foldmethod=indent
+au BufNewFile,BufRead *.html setlocal foldmethod=indent
+
