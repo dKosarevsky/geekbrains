@@ -1,0 +1,4 @@
+armor 0.7
+damage 50
+health 100
+name qwe
