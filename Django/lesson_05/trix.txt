@@ -1,0 +1,20 @@
+искать на гитхабе по запросу good first issue
+
+first issue python
+
+https://github.com/showcases/great-for-new-contributors
+
+
+искать программы стажировок
+
+Опен соурс проекты
+
+декораторы важны
+
+pip install bpython - фича полезная (замена стандартному питоновскому шеллу)
+
+pip install django extensions - набор полезных вещей для джанги (важно для разработки)
+
+from mainapp.models import ProductCategory, Product
+
+./manage.py startapp basketapp   - создаем новое приложение(Корзина)

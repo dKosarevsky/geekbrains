@@ -1,0 +1,14 @@
+python -m venv .venv
+
+source .venv/bin/activate (в винде: source .venv/Scripts/activate)
+
+pip install Django==1.11
+
+django-admin startproject geekshop
+
+django-admin startapp mainapp
+
+python manage.py startapp mainapp (или  ./manage.py startapp mainapp)
+
+python manage.py runserver (после этого проверяем 127.0.0.1:8000 или localhost:8000)
+

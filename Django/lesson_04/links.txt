@@ -1,0 +1,10 @@
+Код стайл моделей:
+https://docs.djangoproject.com/en/2.1/internals/contributing/writing-code/coding-style/#model-style
+
+Стратегии расширения Django User Model:
+https://habr.com/post/313764/
+
+
+./manage.py startapp authapp
+
+

@@ -1,0 +1,9 @@
+Переменные для цикла в шаблонах:
+https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#for
+
+
+1:51
+
+
+./manage.py makemigrations
+./manage.py migrate

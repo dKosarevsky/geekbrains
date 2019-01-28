@@ -1,0 +1,3 @@
+https://docs.djangoproject.com/en/2.0/
+https://djbook.ru/rel1.9/
+https://djangogirls.org/
