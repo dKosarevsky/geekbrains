@@ -48,7 +48,7 @@ def draw_gibbet(step, coord):
 
 x = random.randint(1, 100)
 
-print(x)
+# print(x)
 
 turtle.speed(0)
 
@@ -75,30 +75,36 @@ answer = turtle.textinput("Поиграем?", "y/n")
 if answer == 'n':
     sys.exit()
 
+hints = False
+answer2 = turtle.textinput("Играем с подсказками или по-взрослому =) ?", "y/n")
+if answer2 == 'y':
+    hints = True
+
 try_count = 0
 
 while True:
-    number = turtle.numinput("Угадай число", "Число", 0, 0, 100)
+    number = turtle.numinput("Угадайте число", "Число", 0, 0, 100)
 
     if number == x:
         lastik(-150, 100)
         turtle.color("green")
-        gotoxy(-150, 100)
+        gotoxy(-150, 200)
         turtle.write("Вы выиграли!!!", font=("Arial", 28, "normal"))
         break
 
     else:
-        lastik(-150, 100)
+        # lastik(-150, 200)
         turtle.color("red")
-        gotoxy(-150, 100)
+        gotoxy(-150, 200)
         turtle.write("Неверно!", font=("Arial", 28, "normal"))
 
-        turtle.color("blue")
-        gotoxy(-150, -200)
-        if x < number:
-            turtle.write("ПОДСКАЗКА: Меньше...", font=("Arial", 10, "normal"))
-        elif x > number:
-            turtle.write("ПОДСКАЗКА: Больше...", font=("Arial", 10, "normal"))
+        if hints:
+            gotoxy(100, 100 - try_count * 15)
+            turtle.color("blue")
+            if x < number:
+                turtle.write(str(number) + " Загаданное число меньше", font=("Arial", 10, "normal"))
+            else:
+                turtle.write(str(number) + " Загаданное число больше", font=("Arial", 10, "normal"))
 
         draw_gibbet(try_count, coord_list)
         try_count += 1
